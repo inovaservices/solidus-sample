@@ -1,28 +1,24 @@
 # frozen_string_literal: true
 
-united_states = Spree::Country.find_by!(iso: "US")
-new_york = Spree::State.find_by!(name: "New York")
+morocco = Spree::Country.find_by!(iso: "MA")
+rabat = Spree::State.find_by!(name: "Rabat")
 
-names = ["Sterling Torp", "Jennette Vandervort", "Salome Stroman", "Lyla Lang",
-         "Lola Zulauf", "Cheree Bruen", "Hettie Torp", "Barbie Gutmann",
-         "Amelia Renner", "Marceline Bergstrom", "Keeley Sauer", "Mi Gaylord",
-         "Karon Mills", "Jessika Daugherty", "Emmy Stark"]
-street_addresses = ["7377 Jacobi Passage", "4725 Serena Ridges",
-                    "79832 Hamill Creek", "0746 Genoveva Villages",
-                    "86717 D'Amore Hollow", "8529 Delena Well",
-                    "959 Lockman Ferry", "67016 Murphy Fork",
-                    "193 Larkin Divide", "80697 Cole Parks"]
-secondary_addresses = ["Suite 918", "Suite 374", "Apt. 714", "Apt. 351",
-                       "Suite 274", "Suite 240", "Suite 892", "Apt. 176",
+names = ["Adil", "Aziz", "Imane", "Fatima",
+         "Tarik", "Nourreddine", "Amal", "Abdessalam",
+         "Mouad", "Ibtissam"]
+
+street_addresses = ["Av. My Abdellah, Lot. Rachad", "Rue Sanawbar, Lot. Al Wafae"]
+
+secondary_addresses = ["Imm. 918", "Imm. 374", "Apt. 714", "Apt. 351",
+                       "Imm. 274", "Imm. 240", "Imm. 892", "Apt. 176",
                        "Apt. 986", "Apt. 583"]
-cities = ["Lake Laurenceview", "Lucilefurt", "South Jannetteport",
-          "Leannonport", "Legrosburgh", "Willmsberg", "Karoleside",
-          "Lake German", "Keeblerfort", "Lemkehaven"]
-phone_numbers = ["(392)859-7319 x670", "738-831-3210 x6047",
-                 "(441)881-8127 x030", "1-744-701-0536 x30504",
-                 "(992)432-8273 x97676", "482.249.0178 x532",
-                 "(855)317-6523", "1-529-214-7315 x90865",
-                 "(662)877-7894 x703", "689.578.8564 x72399"]
+
+cities = ['Casablanca', "Tanger", "Tetouan",
+          "Kenitra", "Marrakech", "Dakhela", "Oujda",
+          "Meknes", "Fes", "Ouarzazate"]
+
+phone_numbers = ["00212661000000", "00212660342312",
+                 "0021270000000", '0021266123456']
 
 2.times do
   Spree::Address.create!(
@@ -30,9 +26,9 @@ phone_numbers = ["(392)859-7319 x670", "738-831-3210 x6047",
     address1: street_addresses.sample,
     address2: secondary_addresses.sample,
     city: cities.sample,
-    state: new_york,
-    zipcode: 16_804,
-    country: united_states,
+    state: rabat,
+    zipcode: 10_000,
+    country: morocco,
     phone: phone_numbers.sample
   )
 end
