@@ -2,62 +2,44 @@
 
 Spree::Sample.load_sample("option_types")
 
-size = Spree::OptionType.find_by!(presentation: "Size")
-color = Spree::OptionType.find_by!(presentation: "Color")
+weight = Spree::OptionType.find_by!(presentation: "Weight")
+volume = Spree::OptionType.find_by!(presentation: "Volume")
 
 Spree::OptionValue.create!([
   {
-    name: "Small",
-    presentation: "S",
+    name: "kilogramme",
+    presentation: "kg",
     position: 1,
-    option_type: size
+    option_type: weight
   },
   {
-    name: "Medium",
-    presentation: "M",
+    name: "gramme",
+    presentation: "gr",
     position: 2,
-    option_type: size
+    option_type: weight
   },
   {
-    name: "Large",
-    presentation: "L",
+    name: "milligramme",
+    presentation: "mg",
     position: 3,
-    option_type: size
+    option_type: weight
   },
   {
-    name: "Extra Large",
-    presentation: "XL",
-    position: 4,
-    option_type: size
-  },
-  {
-    name: "Red",
-    presentation: "Red",
+    name: "litre",
+    presentation: "l",
     position: 5,
-    option_type: color
+    option_type: volume
   },
   {
-    name: "Green",
-    presentation: "Green",
+    name: "millilitre",
+    presentation: "ml",
     position: 4,
-    option_type: color
+    option_type: volume
   },
   {
-    name: "Black",
-    presentation: "Black",
+    name: "centilitre",
+    presentation: "cl",
     position: 1,
-    option_type: color
-  },
-  {
-    name: "White",
-    presentation: "White",
-    position: 2,
-    option_type: color
-  },
-  {
-    name: "Blue",
-    presentation: "Blue",
-    position: 3,
-    option_type: color
+    option_type: volume
   }
 ])
