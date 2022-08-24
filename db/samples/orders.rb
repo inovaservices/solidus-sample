@@ -9,34 +9,36 @@ store = Spree::Store.first!
 orders = []
 orders << Spree::Order.create!(
   number: "R123456789",
-  email: "solidus@example.com",
-  item_total: 150.95,
-  adjustment_total: 150.95,
-  total: 301.90,
+  email: "client@example.com",
+  currency: "MAD",
+  item_total: 159,
+  adjustment_total: 100,
+  total: 259,
   shipping_address: Spree::Address.first,
   billing_address: Spree::Address.last
 )
 
 orders << Spree::Order.create!(
   number: "R987654321",
-  email: "solidus@example.com",
-  item_total: 15.95,
-  adjustment_total: 15.95,
-  total: 31.90,
+  email: "client@example.com",
+  currency: "MAD",
+  item_total: 159,
+  adjustment_total: 100,
+  total: 259,
   shipping_address: Spree::Address.first,
   billing_address: Spree::Address.last
 )
 
 orders[0].line_items.create!(
-  variant: Spree::Product.find_by!(name: "Solidus Tote").master,
+  variant: Spree::Product.find_by!(name: "Miel de thym - 250G").master,
   quantity: 1,
-  price: 15.99
+  price: 12
 )
 
 orders[1].line_items.create!(
-  variant: Spree::Product.find_by!(name: "Solidus Snapback Cap").master,
+  variant: Spree::Product.find_by!(name: "Huile d'argane alimentaire biologique - 100ml").master,
   quantity: 1,
-  price: 22.99
+  price: 7
 )
 
 orders.each do |order|
