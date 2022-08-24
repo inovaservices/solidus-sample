@@ -9,7 +9,7 @@ rescue ActiveRecord::RecordNotFound
 end
 
 tax_category = Spree::TaxCategory.find_by!(name: 'Default')
-morocco_vat = Spree::Zone.find_by!(name: 'TVA')
+morocco_vat = Spree::Zone.find_or_create_by!(name: 'TVA')
 shipping_category = Spree::ShippingCategory.find_or_create_by!(name: 'Default')
 
 Spree::ShippingMethod.create!([
