@@ -22,132 +22,88 @@ default_attrs = {
 
 products = [
   {
-    name: "Solidus T-Shirt",
+    name: "Miel de thym - 250G",
     tax_category: tax_category,
     shipping_category: shipping_category,
-    price: 19.99,
-    eur_price: 16,
+    price: 12,
+    mad_price: 120,
+    weight: 0.25,
+    height: 20,
+    width: 10,
+    depth: 5
+  },
+  {
+    name: "Miel de fleur d'oranger - 500G",
+    tax_category: tax_category,
+    shipping_category: shipping_category,
+    price: 5,
+    mad_price: 50,
     weight: 0.5,
     height: 20,
     width: 10,
     depth: 5
   },
   {
-    name: "Solidus Long Sleeve",
+    name: "Huile d'argane alimentaire biologique - 100ml",
     tax_category: tax_category,
     shipping_category: shipping_category,
-    price: 19.99,
-    eur_price: 16,
-    weight: 0.5,
+    price: 7,
+    mad_price: 70,
+    weight: 0.1,
     height: 20,
     width: 10,
     depth: 5
   },
   {
-    name: "Solidus Women's T-Shirt",
+    name: "Safran de taliouine 5g",
     tax_category: tax_category,
     shipping_category: shipping_category,
-    price: 19.99,
-    eur_price: 16,
-    weight: 0.5,
-    height: 20,
-    width: 10,
-    depth: 5
-  },
-  {
-    name: "Solidus Snapback Cap",
-    tax_category: tax_category,
-    shipping_category: shipping_category,
-    price: 15.99,
-    eur_price: 14,
-    weight: 0.5,
+    price: 20,
+    mad_price: 198,
+    weight: 0.05,
     height: 5,
     width: 5,
     depth: 5
   },
   {
-    name: "Solidus Hoodie Zip",
+    name: "Mélange d’épices pour poisson - 100 G",
     tax_category: tax_category,
     shipping_category: shipping_category,
-    price: 29.99,
-    eur_price: 27,
-    weight: 1,
+    price: 1.3,
+    mad_price: 13,
+    weight: 0.1,
     height: 20,
     width: 10,
     depth: 5
   },
   {
-    name: "Ruby Hoodie",
+    name: "Olives Meslala Avec harissa 500g",
     tax_category: tax_category,
     shipping_category: shipping_category,
-    price: 29.99,
-    eur_price: 27,
-    weight: 1,
-    height: 20,
-    width: 10,
-    depth: 5
-  },
-  {
-    name: "Ruby Hoodie Zip",
-    tax_category: tax_category,
-    shipping_category: shipping_category,
-    price: 29.99,
-    eur_price: 27,
-    weight: 0.8,
-    height: 20,
-    width: 10,
-    depth: 5
-  },
-  {
-    name: "Ruby Polo",
-    tax_category: tax_category,
-    shipping_category: shipping_category,
-    price: 26.99,
-    eur_price: 23,
+    price: 0.3,
+    mad_price: 27,
     weight: 0.5,
     height: 20,
     width: 10,
     depth: 5
   },
   {
-    name: "Solidus Mug",
+    name: "Dattes Majhoul - Boite 2kg Type B",
     tax_category: tax_category,
     shipping_category: shipping_category,
-    price: 9.99,
-    eur_price: 7,
-    weight: 1,
-    height: 5,
-    width: 5,
-    depth: 5
-  },
-  {
-    name: "Ruby Mug",
-    tax_category: tax_category,
-    shipping_category: shipping_category,
-    price: 9.99,
-    eur_price: 7,
-    weight: 1,
-    height: 5,
-    width: 5,
-    depth: 5
-  },
-  {
-    name: "Solidus Tote",
-    tax_category: tax_category,
-    shipping_category: shipping_category,
-    price: 15.99,
-    eur_price: 14,
-    weight: 0.5,
+    price: 15,
+    mad_price: 150,
+    weight: 2,
     height: 20,
     width: 10,
     depth: 5
   },
   {
-    name: "Ruby Tote",
+    name: "Huile de sesames 50ml",
     tax_category: tax_category,
     shipping_category: shipping_category,
-    price: 15.99,
-    eur_price: 14,
+    price: 0.3,
+    mad_price: 30,
     weight: 0.5,
     height: 20,
     width: 10,
@@ -156,13 +112,13 @@ products = [
 ]
 
 products.each do |product_attrs|
-  eur_price = product_attrs.delete(:eur_price)
+  mad_price = product_attrs.delete(:mad_price)
   Spree::Config[:currency] = "USD"
 
   product = Spree::Product.create!(default_attrs.merge(product_attrs))
-  Spree::Config[:currency] = "EUR"
+  Spree::Config[:currency] = "MAD"
   product.reload
-  product.price = eur_price
+  product.price = mad_price
   product.shipping_category = shipping_category
   product.save!
 end
