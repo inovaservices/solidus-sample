@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_relative 'lib/spree/version.rb'
+# require_relative 'lib/spree/version.rb'
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'solidus_sample'
-  s.version     = Spree.solidus_version
+  s.version     = "3.2.0"
   s.summary     = 'Sample data (including images) for use with Solidus.'
   s.description = s.summary
 

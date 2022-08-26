@@ -11,7 +11,7 @@ products = {
   huile_argane: "Huile d'argane alimentaire biologique - 100ml",
   safran: "Safran de taliouine 5g",
   melange_epices: "Mélange d’épices pour poisson - 100G",
-  olives_meslala: "Olives Meslala Avec harissa - 500G",
+  olives_meslala: "Olives Meslala Avec harissa 500g",
   dattes_majhoul: "Dattes Majhoul - Boite 2kg Type B",
   huile_sesames: "Huile de sesames 50ml",
 }

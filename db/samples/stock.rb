@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Spree::Sample.load_sample("variants")
+# Spree::Sample.load_sample("variants")
 
 country =  Spree::Country.find_by(iso: 'MA')
 location = Spree::StockLocation.first_or_create! name: 'warehouse', address1: '18, Avenue Madagascar, Ocean', city: 'Rabat', zipcode: '10000', country: country, state: country.states.first

@@ -66,7 +66,7 @@ products = [
     depth: 5
   },
   {
-    name: "Mélange d’épices pour poisson - 100 G",
+    name: "Mélange d’épices pour poisson - 100G",
     tax_category: tax_category,
     shipping_category: shipping_category,
     price: 1.3,

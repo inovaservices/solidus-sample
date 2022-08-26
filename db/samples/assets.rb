@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 Spree::Sample.load_sample("products")
-Spree::Sample.load_sample("variants")
+# Spree::Sample.load_sample("variants")
 
 products = {}
-products[:miel_de_thym] = Spree::Product.includes(variants: [:option_values]).find_by!(name: "Miel de thym - 250G")
-products[:miel_doranger] = Spree::Product.includes(variants: [:option_values]).find_by!(name: "Miel de fleur d'oranger - 500G")
-products[:huile_argane] = Spree::Product.includes(variants: [:option_values]).find_by!(name: "Huile d'argane alimentaire biologique - 100ml")
+products[:miel_de_thym] = Spree::Product.find_by!(name: "Miel de thym - 250G")
+products[:miel_doranger] = Spree::Product.find_by!(name: "Miel de fleur d'oranger - 500G")
+products[:huile_argane] = Spree::Product.find_by!(name: "Huile d'argane alimentaire biologique - 100ml")
 products[:safran] = Spree::Product.find_by!(name: "Safran de taliouine 5g")
-products[:melange_epices] = Spree::Product.find_by!(name: "Mélange d’épices pour poisson - 100 G")
+products[:melange_epices] = Spree::Product.find_by!(name: "Mélange d’épices pour poisson - 100G")
 products[:olives_meslala] = Spree::Product.find_by!(name: "Olives Meslala Avec harissa 500g")
 products[:datte_majhoul] = Spree::Product.find_by!(name: "Dattes Majhoul - Boite 2kg Type B")
 products[:huile_sesames] = Spree::Product.find_by!(name: "Huile de sesames 50ml")

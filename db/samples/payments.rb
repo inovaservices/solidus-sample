@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # create payments based on the totals since they can't be known in YAML (quantities are random)
-method = Spree::PaymentMethod.where(name: 'Credit Card', active: true).first
+method = Spree::PaymentMethod.where(name: 'Credit Card', active: false).first
 
 # This table was previously called spree_creditcards, and older migrations
 # reference it as such. Make it explicit here that this table has been renamed.
