@@ -4,21 +4,16 @@ Spree::Sample.load_sample("taxonomies")
 Spree::Sample.load_sample("products")
 
 categories = Spree::Taxonomy.find_by!(name: "Categories")
-brands = Spree::Taxonomy.find_by!(name: "Brand")
 
 products = {
-  solidus_tshirt: "Solidus T-Shirt",
-  solidus_long: "Solidus Long Sleeve",
-  solidus_tote: "Solidus Tote",
-  ruby_tote: "Ruby Tote",
-  solidus_snapback_cap: "Solidus Snapback Cap",
-  solidus_hoodie: "Solidus Hoodie Zip",
-  ruby_hoodie: "Ruby Hoodie",
-  ruby_hoodie_zip: "Ruby Hoodie Zip",
-  ruby_polo: "Ruby Polo",
-  solidus_mug: "Solidus Mug",
-  ruby_mug: "Ruby Mug",
-  solidus_womens_tshirt: "Solidus Women's T-Shirt"
+  miel_de_thym: "Miel de thym - 250G",
+  miel_oranger: "Miel de fleur d'oranger - 500G",
+  huile_argane: "Huile d'argane alimentaire biologique - 100ml",
+  safran: "Safran de taliouine 5g",
+  melange_epices: "Mélange d’épices pour poisson - 100G",
+  olives_meslala: "Olives Meslala Avec harissa 500g",
+  dattes_majhoul: "Dattes Majhoul - Boite 2kg Type B",
+  huile_sesames: "Huile de sesames 50ml",
 }
 
 products.each do |key, name|
@@ -32,98 +27,56 @@ taxons = [
     position: 0
   },
   {
-    name: "Clothing",
+    name: "Miels, Amlou et confitures",
     taxonomy: categories,
     parent: "Categories"
   },
   {
-    name: "Caps",
+    name: "Miels, Amlou et confitures",
     taxonomy: categories,
     parent: "Categories",
     position: 1,
     products: [
-      products[:solidus_snapback_cap]
+      products[:miel_de_thym],
+      products[:miel_oranger]
     ]
   },
   {
-    name: "Bags",
+    name: "Huiles alimentaires",
     taxonomy: categories,
     parent: "Categories",
     position: 2,
     products: [
-      products[:solidus_tote],
-      products[:ruby_tote]
+      products[:huile_argane],
+      products[:olives_meslala]
     ]
   },
   {
-    name: "Mugs",
+    name: "Épices & Condiments",
     taxonomy: categories,
     parent: "Categories",
     position: 3,
     products: [
-      products[:solidus_mug],
-      products[:ruby_mug]
+      products[:safran],
+      products[:melange_epices]
     ]
   },
   {
-    name: "Shirts",
+    name: "Bien être",
     taxonomy: categories,
-    parent: "Clothing",
-    position: 0,
+    parent: "Categories",
+    position: 4,
     products: [
-      products[:solidus_long],
-      products[:ruby_polo],
-      products[:solidus_womens_tshirt]
+      products[:huile_sesames]
     ]
   },
   {
-    name: "Hoodie",
+    name: "Fruits secs",
     taxonomy: categories,
-    parent: "Clothing",
-    position: 0,
+    parent: "Categories",
+    position: 5,
     products: [
-      products[:solidus_hoodie],
-      products[:ruby_hoodie],
-      products[:ruby_hoodie_zip]
-    ]
-  },
-  {
-    name: "T-Shirts",
-    taxonomy: categories,
-    parent: "Clothing",
-    products: [
-      products[:solidus_tshirt]
-    ],
-    position: 0
-  },
-  {
-    name: "Brands",
-    taxonomy: brands
-  },
-  {
-    name: "Solidus",
-    taxonomy: brands,
-    parent: "Brand",
-    products: [
-      products[:solidus_tshirt],
-      products[:solidus_long],
-      products[:solidus_snapback_cap],
-      products[:solidus_hoodie],
-      products[:solidus_mug],
-      products[:solidus_tote],
-      products[:solidus_womens_tshirt]
-    ]
-  },
-  {
-    name: "Ruby",
-    taxonomy: brands,
-    parent: "Brand",
-    products: [
-      products[:ruby_hoodie],
-      products[:ruby_hoodie_zip],
-      products[:ruby_polo],
-      products[:ruby_mug],
-      products[:ruby_tote]
+      products[:dattes_majhoul]
     ]
   }
 ]

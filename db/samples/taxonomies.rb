@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 taxonomies = [
-  { name: "Categories" },
-  { name: "Brand" }
+  { name: "Categories" }
 ]
 
 taxonomies.each do |taxonomy_attrs|

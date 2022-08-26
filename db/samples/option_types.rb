@@ -1,14 +1,15 @@
 # frozen_string_literal: true
-
-Spree::OptionType.create!([
-  {
-    name: "tshirt-size",
-    presentation: "Size",
-    position: 1
-  },
-  {
-    name: "tshirt-color",
-    presentation: "Color",
-    position: 2
-  }
-])
+unless Spree::OptionType.all.pluck(:name) == ["weight", "volume"]
+  Spree::OptionType.create!([
+    {
+      name: "weight",
+      presentation: "Weight",
+      position: 1
+    },
+    {
+      name: "volume",
+      presentation: "Volume",
+      position: 2
+    }
+  ])
+end

@@ -19,14 +19,15 @@ module SpreeSample
       Spree::Sample.load_sample("taxons")
       Spree::Sample.load_sample("option_values")
       Spree::Sample.load_sample("product_option_types")
-      Spree::Sample.load_sample("product_properties")
-      Spree::Sample.load_sample("variants")
+      # NOTE: set product properties later
+      # Spree::Sample.load_sample("product_properties")
+      # Spree::Sample.load_sample("variants")
       Spree::Sample.load_sample("stock")
       Spree::Sample.load_sample("assets")
 
       Spree::Sample.load_sample("orders")
       Spree::Sample.load_sample("payments")
-      Spree::Sample.load_sample("reimbursements")
+      # Spree::Sample.load_sample("reimbursements")
     end
   end
 end
